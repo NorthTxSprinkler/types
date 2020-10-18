@@ -4,7 +4,8 @@
   "description": "Interface library used across North Tx Sprinkler company repositories.",
   "main": "src/index.ts",
   "scripts": {
-    "test": "testtt"
+    "test": "testtt",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/NorthTxSprinkler/types/issues"
   },
-  "homepage": "https://github.com/NorthTxSprinkler/types#readme"
+  "homepage": "https://github.com/NorthTxSprinkler/types#readme",
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  }
 }
