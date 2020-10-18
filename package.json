@@ -1,8 +1,7 @@
 {
   "name": "@north-tx-sprinkler/types",
-  "version": "1.0.0",
-  "description": "Interface library used across company repositories.",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "Interface library used across North Tx Sprinkler company repositories.",
   "scripts": {
     "test": "testtt"
   },
