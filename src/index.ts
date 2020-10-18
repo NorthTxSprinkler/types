@@ -4,11 +4,11 @@ export interface Project {
   description?: string;
   startDate?: any;
   finishDate?: any;
-  relatedEstimates?: Array<string>;
+  relatedEstimates?: string[];
   estimatedCost?: number;
   actualCost?: number;
-  estimatedCostItems?: Array<{ cost: number; description: string }>;
-  actualCostItems?: Array<{ cost: number; description: string }>;
+  estimatedCostItems?: { cost: number; description: string }[];
+  actualCostItems?: { cost: number; description: string }[];
 }
 
 export interface Client {
@@ -30,7 +30,7 @@ export interface IrrigationApt {
     address?: any;
   };
   time: any;
-  notes: Array<string>;
+  notes: string[];
 }
 
 /**
