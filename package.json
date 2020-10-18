@@ -1,0 +1,19 @@
+{
+  "name": "@north-tx-sprinkler/types",
+  "version": "1.0.0",
+  "description": "Interface library used across company repositories.",
+  "main": "index.js",
+  "scripts": {
+    "test": "testtt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NorthTxSprinkler/types.git"
+  },
+  "author": "Kevin Towe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NorthTxSprinkler/types/issues"
+  },
+  "homepage": "https://github.com/NorthTxSprinkler/types#readme"
+}
