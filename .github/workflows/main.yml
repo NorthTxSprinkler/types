@@ -6,7 +6,11 @@ name: CI
 # events but only for the master branch
 on:
   push:
-    branches: [master]
+    branches:
+      - master
+    paths-ignore:
+      - 'package.json'
+      - 'CHANGELOG.md'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -42,7 +46,29 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      - name: Publish
-        run: npm run deploy
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Build
+        run: npm run prepare
+      
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v2
+        with: 
+          name: build-artifact
+          path: dist
+
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+
+    - name: Download build artifact
+      uses: actions/download-artifact@v2
+      with: 
+        name: build-artifact
+
+    - name: Publish
+      run: npm run deploy
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
